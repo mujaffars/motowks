@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/button.css">
+        <link rel="stylesheet" href="css/button2.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		
+        <link rel="stylesheet" href="css/libs1/toastr.min.css">
+		
+        <meta name="viewport" content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+		<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; connect-src http://mjapps.shivtraderssangli.com/"> -->
+    </head>
+    <body onload="onLoad()" class="noselect ">
+
+        <div id="header">
+			<i id="icon_menu" class="fa fa-bars fa-3" aria-hidden="true"></i>
+		</div>
+        <div id="sidebar-left">
+            <div class="clsMenu">
+                Menu
+				<i id="icon_menu_close" class="fa fa-times fa-3" aria-hidden="true" onclick="showLeftMenu();"></i>
+            </div>
+			
+			<div id="div-sidebar-left">
+				<ul>
+					<li>Customer</li>
+					<ul class="clsCustomer">
+						<li class="clsCustomerAdd">Add</li>
+						<li class="clsCustomerList">List</li>
+						<li class="clsCustomerSearch">Search</li>
+					</ul>
+					
+					<li>Servicing</li>
+					<ul class="clsServicing">
+						<li class="clsServicingAdd">Add</li>
+						<li class="clsServicingList">List</li>
+						<li class="clsServicingSearch">Search</li>
+					</ul>
+					
+					<li>Service Items</li>
+					<ul class="clsItems">
+						<li class="clsServiceAdd">Add</li>
+						<li class="clsServiceList">List</li>
+						<li class="clsServiceSearch">Search</li>
+					</ul>
+					
+				</ul>
+			</div>
+			
+        </div>
+        <div id="main">Main</div>
+        <!--<div id="sidebar-right">Right</div>-->
+        <div id="footer">Footer</div>
+	
+		<div class="pagesHtml" style="display:none;">
+		
+			<div class="divCreateDeal">
+				<div class="clsCreateDeal">
+					<table style="text-align: center; margin: 0 auto;" class="tblCreateDeal">
+						<tr class="">
+							<td colspan="3">
+								<div class="infoSmall">Create Deal</div>
+							</td>            
+						</tr>
+						<tr>
+							<td colspan="3">
+								<input type="button" class="inp_product_type" value="Buy">
+								<input type="button" class="inp_product_type" value="Sell">
+							</td>            
+						</tr>
+						<tr>
+							<td>		
+								<div class="clsHeading">Product</div>
+							</td>
+							<td>		
+								<input type="button" class="inp_product_type" value="Peti" ptype="peti" />
+							</td>
+							<td>		
+								<input type="button" class="inp_product_type" value="Chousa" ptype="chousa"/>
+							</td>
+						</tr>
+						<tr>
+							<td>		
+								<div class="clsHeading">Payment Type</div>
+							</td>
+							<td>		
+								<input type="button" class="inp_payment_type" value="RTGS" ptype="rtgs" />
+							</td>
+							<td>		
+								<input type="button" class="inp_payment_type" value="Retail" ptype="retail"/>
+							</td>
+						</tr>
+						<tr>
+							<td>		
+								<div class="clsHeading">Quantity (Kg)</div>
+							</td>
+							<td colspan="2">		
+								<input type="text" class="inp_quantity clsInput" value="0"/>
+							</td>
+						</tr>
+						<tr>
+							<td>		
+								<div class="clsHeading">Expected Rate (Rs/Kg)</div>
+							</td>
+							<td colspan="2">		
+								<input type="text" class="inp_expected_rate clsInput" value="0"/>
+							</td>
+						</tr>
+						
+						<tr>
+							<td colspan="3">		
+								<input type="button" class="btn_submit" value="Submit" ptype="rtgs" />
+							</td>
+						</tr>
+						
+					</table>
+				</div>
+			</div>
+			
+		</div>
+		
+    </body>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">$(document).bind("mobileinit", function () {
+            $.extend($.mobile, {autoInitializePage: false})
+        });</script>
+    <script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="js/monetize.js?v=4"></script>
+    <script type="text/javascript" src="js/globals.js?v=5"></script>
+    <script type="text/javascript" src="js/init.js?v=5"></script>
+    <script type="text/javascript" src="js/showhide.js?v=5"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/md5.js"></script>
+    <script type="text/javascript" src="js/audio.js?v=4"></script>
+    <script type="text/javascript" src="js/jquery.base64.js"></script>
+	<script type="text/javascript" src="js/libs1/toastr.min.js"></script>
+</body>
+</html>
