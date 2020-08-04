@@ -71,7 +71,7 @@ img{border:none; max-height: 100%; max-width: 100%;
 #header{
     /*background-color: lightblue;*/
     width:100%;
-    height:10%;
+    height: 4.4em !important;
     text-align: center;
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#00b7ea+0,009ec3+100;Blue+3D+%2315 */
     background: rgb(0,183,234); /* Old browsers */
@@ -82,16 +82,28 @@ img{border:none; max-height: 100%; max-width: 100%;
 
 }
 
+.clsColRed{
+    color: red;
+}
+
+#header .divPageHeader{
+    font-size: 1.8em;
+    padding-top: 3%;
+    height: 100%;
+    color: white;
+    font-weight: bold;
+}
 #main{
     float:left;
+    padding: 1.5em 0;
     background-color: whitesmoke;
     width:100%;
-    height: 80%;
-	font-size: 1.5em;
+    height: 89%;
+    font-size: 1.5em;
 }
 
 #main input{
-	width: 80%;
+    width: 90%;
 }
 
 #footer{
@@ -119,8 +131,8 @@ img{border:none; max-height: 100%; max-width: 100%;
 }
 
 #div-sidebar-left{
-	overflow: scroll;
-	height: 90%;
+    overflow: scroll;
+    height: 90%;
 }
 
 #ivolume{
@@ -178,39 +190,87 @@ img{border:none; max-height: 100%; max-width: 100%;
 }
 
 #header #icon_menu{
-	font-size: 2.5em;
+    font-size: 2.5em;
     float: left;
-    padding: 0.5em;
-	color: white;
+    padding: 0.4em;
+    color: white;
 }
 
 #sidebar-left #icon_menu_close{
-	float: right;
-	font-size: 1.3em;
-	color: white;
+    float: right;
+    font-size: 1.3em;
+    color: white;
 }
 
 #sidebar-left ul li {
-	font-size: 1.5em;
-	color: white;
-	padding: 0.5em 0;
+    font-size: 1.5em;
+    color: white;
+    padding: 0.5em 0;
 }
 
 /***** Pages Html *****/
 #main table{
-	width:100%;
+    width:100%;
 }
 #main table td{
-	padding:0.5em 0;
+    padding:0.5em 0;
 }
 #main .clsCreateDeal{
-	font-size:1.5em;
+    font-size:1.5em;
 }
 #main .clsCreateDeal .clsInput{
-	width: 50%;
+    width: 50%;
 }
 
 #toast-container{
-	margin-top: 20%;
-	font-size: 1.3em;
+    margin-top: 20%;
+    font-size: 1.3em;
+}
+
+/**** Cust List  ****/
+.tblAddCust tr td{
+    width:50%;
+}
+.clsDivCustList{
+    height:100%;
+    overflow:scroll;
+}
+.clsDivCustList .divCustRow div{
+    width: 50%;
+}
+.divCustSec{
+    height: 6.5em;
+    border: 1px solid black;
+    padding: 2%;
+    border-radius: 5%;
+    font-size: 0.9em;
+    margin-bottom: 1%;
+}
+.divCustSec .divCustRow div{
+    float: left;
+}
+.divCustSec .divCustRow .headCustListName, .divCustSec .divCustRow .headCustListSdate{
+    font-weight: bold;
+}
+.divCustSec .divCustRow .headCustMono, .divCustSec .divCustRow .headCustInvoiceAmt{
+    font-weight: bold;
+}
+.clsServiceAddPage .divServicingItems{
+    height: 100%;
+    overflow: scroll;
+}
+
+/**** Servicing ****/
+.tblServicing .clsSpanVno input{
+    /*width: 48% !important;*/
+}
+.clsServiceAddPage i{
+    font-size: 1.5em;
+}
+.clsServiceAddPage{
+    height: 100%;
+    overflow: hidden;
+}
+.clsCamImgTaken{
+    color: darkgreen;
 }

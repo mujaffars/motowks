@@ -1,21 +1,68 @@
-<div>
-    <table style="text-align: center; margin: 0 auto;" class="tblOtherGames">
-        <tr class="trGCorrect">
-            <td colspan="2">
-                <div class="infoSmall">Create Deal</div>
-            </td>            
-        </tr>
-        <tr class="trGWrong">
-            <td colspan="2">
-                <div class="infoSmall">Incorrect guess, Coins - 20 <span class="modalClose">X</span></div>                
-            </td>            
+<div class="clsServiceAddPage">
+    <table style="text-align: center; margin: 0 auto;" class="tblServicing">
+        <tr>
+            <td>
+                <span>Vehicle No</span> 
+            </td>
+            <td>
+                <span class="clsSpanVno"><input type="text" name="vehicleNo" id="vehicleNo"/></span>
+            </td>  
         </tr>
         <tr>
-            <td class="btnTd" colspan="2">
-                <i class="fa fa-share-alt iconfa fa-3" onclick="socialShare();"></i>
-                <i class="fa fa-forward iconfa fa-3"></i>
-                <i class="fa fa-share-alt iconfa fa-3" onclick="showReward();"></i>
+            <td>
+                <span>Total Amount</span> 
+            </td>
+            <td>
+                <span class="clsTotalAmt">
+                    <input type="number" name="invTotalAmt" id="invTotalAmt"/>
+                </span>
+            </td>  
+        </tr>
+        <tr>
+            <td>
+                <span>Summary</span> 
+            </td>
+            <td>
+                <span class="clsSummary">
+                    <textarea name="invSummary" id="invSummary"></textarea>
+                </span>
+            </td>  
+        </tr>
+        <tr>
+            <td>
+                <span>Bill image</span> 
+            </td>
+            <td>
+                <span class="clsBillImg">
+                    <i class="fa fa-image fa-3 clsCamImgTaken" style="display: none;" aria-hidden="true"></i>
+                    <input type="button" class="btn btn-info" style="display: none;" name="btnRetakePhoto" id="btnRetakePhoto" onclick="getCameraImage();" value="Retake photo">
+                    <i class="fa fa-camera fa-3 clsCamBillImg" aria-hidden="true"></i>
+                </span>
+            </td>  
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" class="btn btn-success" name="btnSaveInv" id="btnSaveInv" value="Save"/>
             </td>
         </tr>
+<!--        <tr>
+            <td colspan="2"><i class="fa fa-plus-circle fa-3 clsLnkAddItem" aria-hidden="true"></i></td>		
+        </tr>-->
     </table>
+
+    <!--    <div class="divServicingItems">
+            <table style="text-align: center; margin: 0 auto;" class="tblServicingItems">
+    
+            </table>
+        </div>
+    
+        <div class="clsDynamicTr">
+            <table style="text-align: center; margin: 0 auto;" class="tblServItemsSkel">
+                <tr>
+                    <td><input type="text" value=""/></td>
+                    <td><input type="text" value=""/></td>
+                    <td><i class="fa fa-minus-circle fa-3 clsLnkRemoveItem" aria-hidden="true" onclick="removeSItem(this);"></i></td>			
+                </tr>
+            </table>
+        </div>-->
 </div>

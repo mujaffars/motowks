@@ -1,4 +1,4 @@
-var introSound = document.createElement('audio');
+/*var introSound = document.createElement('audio');
 var tapSound = document.createElement('audio');
 var tapBackSound = document.createElement('audio');
 var ansRevealSound = document.createElement('audio');
