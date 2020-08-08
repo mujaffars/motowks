@@ -2,7 +2,7 @@
     <table style="text-align: center; margin: 0 auto;" class="tblServicing">
         <tr>
             <td>
-                <span>Vehicle No</span> 
+                <span>Vehicle No</span> <span class="clsColRed">*</span> 
             </td>
             <td>
                 <span class="clsSpanVno"><input type="text" name="vehicleNo" id="vehicleNo"/></span>
@@ -10,7 +10,7 @@
         </tr>
         <tr>
             <td>
-                <span>Total Amount</span> 
+                <span>Total Amount</span> <span class="clsColRed">*</span> 
             </td>
             <td>
                 <span class="clsTotalAmt">
@@ -41,7 +41,8 @@
             </td>  
         </tr>
         <tr>
-            <td colspan="2">
+            <td colspan="2" class="clsTdButtons">
+                <input type="button" class="btn btn-info" name="btnCancleInv" id="btnCancleInv" value="Cancle"/>
                 <input type="button" class="btn btn-success" name="btnSaveInv" id="btnSaveInv" value="Save"/>
             </td>
         </tr>

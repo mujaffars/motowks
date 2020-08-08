@@ -63,5 +63,21 @@ function setModalContent(modalSkeleton, forwhat, adWTime) {
                 }
             });
             break;
+        default :
+            $.ajax({
+                url: forwhat+'.html',
+                type: 'GET',
+                dataType: 'html',
+                async: true,
+                error: function () {
+                },
+                success: function (resp) {
+                    $(modalSkeleton).find('#modalShellBody').html('').append(resp);
+                    if (forwhat==='loader') {
+
+                    }
+                }
+            });
+            break;
     }
 }

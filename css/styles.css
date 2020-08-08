@@ -12,6 +12,13 @@ body{
     font-family: tahoma;
 }
 
+.clsLoadingText{
+    color: #03647b;
+    font-size: 1em;
+}
+.imgLoader{
+    height: 2em;
+}
 img{border:none; max-height: 100%; max-width: 100%;
     image-rendering: -webkit-optimize-contrast;}
 
@@ -95,7 +102,7 @@ img{border:none; max-height: 100%; max-width: 100%;
 }
 #main{
     float:left;
-    padding: 1.5em 0;
+    padding: 0.3em 0;
     background-color: whitesmoke;
     width:100%;
     height: 89%;
@@ -228,6 +235,11 @@ img{border:none; max-height: 100%; max-width: 100%;
 }
 
 /**** Cust List  ****/
+
+.clsDivCustList .custListName{
+    height: 1.4em;
+    overflow: hidden;
+}
 .tblAddCust tr td{
     width:50%;
 }
@@ -240,11 +252,11 @@ img{border:none; max-height: 100%; max-width: 100%;
 }
 .divCustSec{
     height: 6.5em;
-    border: 1px solid black;
+    border-top: 0.15em solid #037e9c;
     padding: 2%;
-    border-radius: 5%;
+    /*border-radius: 5%;*/
     font-size: 0.9em;
-    margin-bottom: 1%;
+    /*margin-bottom: 1%;*/
 }
 .divCustSec .divCustRow div{
     float: left;
@@ -259,7 +271,28 @@ img{border:none; max-height: 100%; max-width: 100%;
     height: 100%;
     overflow: scroll;
 }
-
+/**** Cust Detail ****/
+.clsInvoiceHead{
+    text-align: center;
+    background-color: #988c00;
+    color: white;
+    font-weight: bold;
+}
+.tblCustDetail{
+    text-align: center !important;
+    margin: 0 auto !important;
+    width: 94% !important;
+}
+.tblCustDetail td{
+    padding: 0.2em 0 !important;
+    text-align: left !important;
+}
+.clsBtnAddInv, #btnBacklist {
+    width: auto !important;
+    padding: 0 4% !important;
+    font-weight: bold !important;
+    font-size: 1em !important;
+}
 /**** Servicing ****/
 .tblServicing .clsSpanVno input{
     /*width: 48% !important;*/
@@ -273,4 +306,18 @@ img{border:none; max-height: 100%; max-width: 100%;
 }
 .clsCamImgTaken{
     color: darkgreen;
+}
+.tblInvCustDetail{
+    text-align: center;
+    margin: 0 auto;
+    border: 0.1em solid #585201;
+}
+.tblInvCustDetail td{
+    padding: 0.1em !important;
+}
+.tblInvCustDetail .invTdSummary{
+    background-color: #b1efff;
+}
+.tblServicing .clsTdButtons input{
+    width: 40% !important;
 }

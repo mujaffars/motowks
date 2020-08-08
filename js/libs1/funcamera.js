@@ -11,6 +11,7 @@ function cameraSuccess(imageURI) {
 
     $('.tblServicing .clsCamBillImg').hide();
     $('.tblServicing .clsCamImgTaken').show();
+    $('.tblServicing #btnRetakePhoto').show();
     $('.tblServicing .clsCamBillImg').hide();
     
     toastr.success('Photo attached successfully');
