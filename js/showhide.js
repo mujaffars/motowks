@@ -27,7 +27,7 @@ function showHideSidebar() {
 
 function showThePage(thePage, theFolder) {
 
-    $('#main').html('');
+    $('#main').html('');    
 
     $.ajax({
         url: theFolder+"/"+thePage+'.html',
@@ -163,3 +163,7 @@ function getCustomerListing() {
 function removeSItem(objRmElem) {
     $(objRmElem).parent().parent().remove();
 }
+
+
+/*** Alter Queries ***/
+// ALTER TABLE `mw_service` ADD `invdate` DATE NULL DEFAULT NULL AFTER `amount`;

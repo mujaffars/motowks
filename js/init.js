@@ -1,13 +1,16 @@
-var tokenPresent=false;
-var theNextFun=false;
+var tokenPresent = false;
+var theNextFun = false;
 
 $(window).on('load', function () {
+        
+    if (localStorage.getItem("token") === null || localStorage.getItem("token") === undefined) {
+        showModal('login');
+    }
 
-    //showModal('login');
 //        showModal('loader');
     handleLeftMenuClicks();
 
-    toastr.options={
+    toastr.options = {
         "closeButton": false,
         "debug": false,
         "newestOnTop": false,
@@ -34,7 +37,7 @@ $(function () {
     //console.log(obj);
 
     $('#main').click(function () {
-        if ($('#sidebar-left').css('display')=='block') {
+        if ($('#sidebar-left').css('display') == 'block') {
             $('#sidebar-left').hide("slide", {direction: "left"}, 100);
         }
     })
@@ -77,6 +80,11 @@ function handleLeftMenuClicks() {
     })
     $('#sidebar-left .clsServer3').click(function () {
         serverUrl = 'http://mjapps.shivtraderssangli.com/app/trade-app/api/';
+    })
+    $('#sidebar-left .clsLogout').click(function () {
+        localStorage.setItem('token', '');
+        showHideSidebar();
+        showModal('login');
     })
 }
 
