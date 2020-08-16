@@ -167,3 +167,5 @@ function removeSItem(objRmElem) {
 
 /*** Alter Queries ***/
 // ALTER TABLE `mw_service` ADD `invdate` DATE NULL DEFAULT NULL AFTER `amount`;
+// ALTER TABLE `mw_service` ADD `remind_date` DATE NULL DEFAULT NULL AFTER `invdate`;
+// ALTER TABLE `mw_service` ADD `km_run` VARCHAR(50) NULL DEFAULT NULL AFTER `summary`;
