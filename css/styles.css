@@ -53,7 +53,15 @@ img{border:none; max-height: 100%; max-width: 100%;
     text-align: left;
     vertical-align: middle;
 }
-
+.btn{
+    font-size: 1.1em !important;
+    font-weight: bold !important;
+}
+.alert{
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    padding: 0;
+}
 @keyframes animatedBackground {
     0% { background-position: 0 0; }
     100% { background-position: -300px 0; }
@@ -87,6 +95,14 @@ img{border:none; max-height: 100%; max-width: 100%;
     background: linear-gradient(to bottom,  rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7ea', endColorstr='#009ec3',GradientType=0 ); /* IE6-9 */
 
+}
+
+.toast {
+  opacity: 1 !important;
+}
+
+#toast-container > div {
+  opacity: 1 !important; 
 }
 
 .clsColRed{
@@ -293,6 +309,10 @@ img{border:none; max-height: 100%; max-width: 100%;
     font-weight: bold !important;
     font-size: 1em !important;
 }
+.pdivSearchCust .divCustSec{
+    width: 100%;
+    text-align: left;
+}
 /**** Servicing ****/
 .tblServicing .clsSpanVno input{
     /*width: 48% !important;*/
@@ -320,4 +340,13 @@ img{border:none; max-height: 100%; max-width: 100%;
 }
 .tblServicing .clsTdButtons input{
     width: 40% !important;
+}
+
+.custControls .fa-3{
+    font-size: 1.5em;
+    vertical-align: bottom;
+}
+
+.clsInvoiceDetail .invTdAction i{
+    padding: 0 4%;
 }
