@@ -4,6 +4,7 @@ var floor_width;
 var linking = {};
 var lvlId;
 var nextId;
+
 var animSpeed = 400;
 var activePage = '';
 var pastPage = '';
@@ -129,6 +130,7 @@ function closeModal() {
     $('.bs-example-modal-sm2').modal('hide');
 }
 
+
 function defineFunctions(modalSkeleton, forwhat, forModel, showData) {
     if (forwhat === 'login') {
         $('#sidebar-left .clsServer3, .clsLoginText').click(function () {
@@ -143,5 +145,6 @@ function defineFunctions(modalSkeleton, forwhat, forModel, showData) {
         $(modalSkeleton).find('.clsTotalAmt').html(showData.amount);
         $(modalSkeleton).find('.clsSummary').html(showData.summary);
         $(modalSkeleton).find('.clsSpanRSDate').html(moment(showData.reservice_date).format('DD MMM YYYY'));
+        
     }
 }

@@ -27,7 +27,7 @@ function showHideSidebar() {
 
 function showThePage(thePage, theFolder) {
 
-    $('#main').html('');
+    $('#main').html('');    
 
     $.ajax({
         url: theFolder + "/" + thePage + '.html',

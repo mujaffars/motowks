@@ -1,3 +1,4 @@
+
 var serverUrl = 'http://localhost/mwserver/api/';
 //var serverUrl='http://localhost:90/mwserver/api/';
 //var serverUrl = 'http://mjapps.shivtraderssangli.com/app/trade-app/api/';
@@ -168,6 +169,40 @@ function setVehicleNoAutocomplete() {
         minLength: 2
     });
 
+}
+
+function dbCreateInvoice(postData) {
+    $.ajax({
+        url: serverUrl + 'createInvoice',
+        type: 'post',
+        beforeSend: function (request) {
+            request.setRequestHeader("Token", localStorage.getItem('token'));
+        },
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify(postData),
+        success: function (res) {
+            if (res === 'unauthorized') {
+                showModal('login');
+            } else {
+                if (res.code == 0)
+                {
+                    toastr.success(res.result);
+                    closeModal();
+
+                    custDtlId = $('#header').attr('addservfor');
+                    showThePage('detail', 'pages/customer');
+
+                } else {
+                    toastr.error(res.result);
+                }
+            }
+        },
+        error: function (res) {
+            $('#main').html(JSON.stringify(res));
+            closeModal();
+        }
+    });
 }
 
 function getCustAndInvoices(postData) {
