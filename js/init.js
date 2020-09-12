@@ -2,7 +2,7 @@ var tokenPresent = false;
 var theNextFun = false;
 
 $(window).on('load', function () {
-        
+
     if (localStorage.getItem("token") === null || localStorage.getItem("token") === undefined) {
         showModal('login');
     }
@@ -70,6 +70,12 @@ function handleLeftMenuClicks() {
     $('#sidebar-left .clsServicing .clsServicingAdd').click(function () {
         showHideSidebar();
         addServicing();
+    })
+
+    $('#sidebar-left .clsCustomer .clsCustomerReminders').click(function () {
+        showHideSidebar();
+        $('.divPageHeader').html('Re-Service Reminders');
+        showThePage('reminder', 'pages/customer');
     })
 
     $('#sidebar-left .clsServer1').click(function () {
