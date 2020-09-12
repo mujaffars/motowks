@@ -90,6 +90,8 @@ function handleNextFunction(resp) {
         showSearchCust(resp);
     } else if (theNextFun === 'iterateCustDetail') {
         showCustDetail(resp);
+    } else if (theNextFun === 'showReminderData') {
+        showRemindersList(resp);
     }
 }
 
@@ -233,6 +235,21 @@ function showCustDetail(resp) {
         $('.skelDivInvList .invTdSummary').html(invVal.summary);
 
         $('.clsInvoiceDetail .divInvliceDetails').append($('.skelDivInvList').html());
+    })
+}
+
+function showRemindersList(resp) {
+    $.each(resp, function (invIndex, invVal) {
+        console.log(invVal.reservice_date);
+        $('.skelDivCustReminder .custReminderDate').html(moment(invVal.reservice_date).format('DD MMM YYYY'));
+        if (invVal.invdate !== null) {
+            $('.skelDivCustReminder .custListSdate').html(moment(invVal.invdate).format('DD MMM YYYY'));
+        }
+        $('.skelDivCustReminder .custName').html(invVal.first_name+" "+invVal.last_name);
+        $('.skelDivCustReminder .custMoNo').html(invVal.mobile_no);
+        
+
+        $('.clsDivReminderList').append($('.skelDivCustReminder').html());
     })
 }
 
