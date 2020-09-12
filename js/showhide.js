@@ -98,6 +98,7 @@ function definePageEvents(thePage, theFolder) {
                     'mobile_no': $("#main").find('#mobileNo').val()
                 };
                 theNextFun = 'showSearchCust';
+                
                 resp = searchCustomer(searchData);
             }
         })
