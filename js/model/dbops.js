@@ -235,3 +235,37 @@ function showCustDetail(resp) {
         $('.clsInvoiceDetail .divInvliceDetails').append($('.skelDivInvList').html());
     })
 }
+
+function getAllReminders() {
+
+    $.ajax({
+        url: serverUrl + "listReminders",
+        type: 'GET',
+        beforeSend: function (request) {
+            request.setRequestHeader("Token", localStorage.getItem('token'));
+        },
+        dataType: 'json',
+        async: true,
+        error: function () {
+        },
+        success: function (resp) {
+            closeModal();
+
+            if (resp === 'unauthorized') {
+                showModal('login');
+            } else {
+                if (theNextFun) {
+                    handleNextFunction(resp);
+                } else {
+                    return resp;
+                }
+            }
+        },
+        error: function (res) {
+            closeModal();
+        },
+        fail: function () {
+            alert('request failed');
+        }
+    });
+}

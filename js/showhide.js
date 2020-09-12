@@ -174,6 +174,9 @@ function definePageEvents(thePage, theFolder) {
             }
         })
 
+    } else if (thePage === 'reminder' && theFolder === 'pages/customer') {
+        theNextFun = 'showReminderData';
+        getAllReminders();
     }
 
 }
