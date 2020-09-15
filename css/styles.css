@@ -9,7 +9,7 @@ body{
     height: 100%;
     position: fixed;
     width: 100%;
-    font-family: tahoma;
+    font-family: monospace !important;
 }
 
 .clsLoadingText{
@@ -326,6 +326,24 @@ img{border:none; max-height: 100%; max-width: 100%;
     width: 100%;
     text-align: left;
 }
+.pdivSearchCust .divCustRow div{
+    color: white !important;
+}
+.spanCustAction .fa-pencil, .spanCustAction .fa-trash{
+    font-size: 1.5em;
+    color: #7b5b00;
+}
+/**** Cust Edit Model ****/
+.tblEditCust td{
+    font-size: 0.8em !important;
+    padding: 0.5em 0em;
+}
+.tblEditCust .clsECHead{
+    font-weight: bold;
+    background-color: #0096bb;
+    color: white;
+    border-radius: 5%;
+}
 /**** Servicing ****/
 .tblServicing .clsSpanVno input{
     /*width: 48% !important;*/
@@ -362,4 +380,9 @@ img{border:none; max-height: 100%; max-width: 100%;
 
 .clsInvoiceDetail .invTdAction i{
     padding: 0 4%;
+}
+
+/** Div skeleton spacing **/
+.clsDiv50{
+    width: 50%;
 }

@@ -136,15 +136,39 @@ function defineFunctions(modalSkeleton, forwhat, forModel, showData) {
         $('#sidebar-left .clsServer3, .clsLoginText').click(function () {
             serverUrl = 'http://mjapps.shivtraderssangli.com/app/trade-app/api/';
         })
+    } else if (forModel == 'customer' && forwhat == 'edit') {
+
+        $(modalSkeleton).find('.tblEditCust').attr('cust_id', showData.id);
+        $(modalSkeleton).find('#vehicleNo').val(showData.vehicle_no);
+        $(modalSkeleton).find('#customerFName').val(showData.first_name);
+        $(modalSkeleton).find('#customerLName').val(showData.last_name);
+        $(modalSkeleton).find('#mobileNo').val(showData.mobile_no);
+
+        $(modalSkeleton).find('#btnUpdateCustomer').click(function () {
+            var tblParent = $(this).parent().parent().parent().parent();
+            if ($(tblParent).find('#vehicleNo').val() === '') {
+                toastr.error('Vehicle No required');
+                $(tblParent).find('#vehicleNo').focus();
+            } else {
+                var fdata = {
+                    'cust_id': $(tblParent).attr('cust_id'),
+                    "firstname": $(tblParent).find('#customerFName').val(),
+                    "lastname": $(tblParent).find('#customerLName').val(),
+                    'vehicle_no': $(tblParent).find('#vehicleNo').val(),
+                    'mobile_no': $(tblParent).find('#mobileNo').val()
+                };
+
+                dbUpdateCustomer(fdata);
+            }
+        })
+
     } else if (forModel == 'servicing' && forwhat == 'detail') {
-        console.log('111111111111');
-        console.log(showData);
-        
+
         $(modalSkeleton).find('.clsSpanDate').html(moment(showData.invdate).format('DD MMM YYYY'));
         $(modalSkeleton).find('.clsSpanKmRun').html(moment(showData.kmrun).format('DD MMM YYYY'));
         $(modalSkeleton).find('.clsTotalAmt').html(showData.amount);
         $(modalSkeleton).find('.clsSummary').html(showData.summary);
         $(modalSkeleton).find('.clsSpanRSDate').html(moment(showData.reservice_date).format('DD MMM YYYY'));
-        
+
     }
 }

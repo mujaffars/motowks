@@ -62,6 +62,35 @@ function getAllCustomer() {
     });
 }
 
+function dbUpdateCustomer(PostData){
+    $.ajax({
+        url: serverUrl + 'updateCustomer',
+        type: 'post',
+        headers: myHeaders,
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify(PostData),
+        success: function (res) {
+            closeModal();
+            if (res.code == 0)
+            {
+                toastr.success(res.result);
+                closeModal();
+                $('.divPageHeader').html('List customer');
+                custDtlId = res.cust_id;
+                showThePage('detail', 'pages/customer');
+            } else {
+                toastr.error(res.result);
+            }
+        },
+        error: function (res) {
+            closeModal();
+            $('#main').html(JSON.stringify(res));
+            closeModal();
+        }
+    });
+}
+
 function searchCustomer(PostData) {
     $.ajax({
         url: serverUrl + "searchCustomer",
@@ -119,7 +148,7 @@ function showSearchCust(resp) {
     if (resp == null) {
         $('.skelDivCustList').hide();
     } else {
-        $('.skelDivCustList .custListName').html(resp.first_name+" "+resp.last_name);
+        $('.skelDivCustList .custListName').html(resp.first_name + " " + resp.last_name);
         $('.skelDivCustList .custListVno').html(resp.vehicle_no);
         $('.skelDivCustList .custMono').html(resp.mobile_no);
         $('.skelDivCustList .custListCdate').html(moment(resp.createdon).format('DD MMM YYYY'));
@@ -218,6 +247,7 @@ function showCustDetail(resp) {
     $('.clsCustDetail .custVehicleNo').html(resp.cust.vehicle_no);
     $('.clsCustDetail .custMobileNo').html(resp.cust.mobile_no);
     $('.clsCustDetail').attr('cust_id', resp.cust.id);
+    $('.clsCustDetail .fa-pencil').attr('cust_id', resp.cust.id);
 
     $('.clsCustDetail .clsBtnAddInv').click(function () {
         $('#header').attr('addServFor', $('.clsCustDetail').attr('cust_id'));
@@ -236,20 +266,48 @@ function showCustDetail(resp) {
 
         $('.clsInvoiceDetail .divInvliceDetails').append($('.skelDivInvList').html());
     })
+
+    $('.clsCustDetail .fa-pencil').click(function () {
+        
+        var postData = {
+            'id': $(this).attr('cust_id'),
+            'getfor': 'custdtl'
+        }
+        $.ajax({
+            url: serverUrl + "searchCustomer",
+            type: 'POST',
+            beforeSend: function (request) {
+                request.setRequestHeader("Token", localStorage.getItem('token'));
+            },
+            dataType: 'json',
+            async: true,
+            data: JSON.stringify(postData),
+            error: function () {
+            },
+            success: function (resp) {
+                showModal('edit', 'customer', resp);
+            }
+        });
+
+    })
+
 }
 
 function showRemindersList(resp) {
     $.each(resp, function (invIndex, invVal) {
-        console.log(invVal.reservice_date);
-        $('.skelDivCustReminder .custReminderDate').html(moment(invVal.reservice_date).format('DD MMM YYYY'));
-        if (invVal.invdate !== null) {
-            $('.skelDivCustReminder .custListSdate').html(moment(invVal.invdate).format('DD MMM YYYY'));
-        }
-        $('.skelDivCustReminder .custName').html(invVal.first_name+" "+invVal.last_name);
-        $('.skelDivCustReminder .custMoNo').html(invVal.mobile_no);
-        
 
-        $('.clsDivReminderList').append($('.skelDivCustReminder').html());
+        if (invVal.reserve_date !== null) {
+            $('.skelDivCustReminder .divCustSec').attr('cust_id', invVal.cust_id);
+            $('.skelDivCustReminder .custReminderDate').html(moment(invVal.reserve_date).format('DD MMM YYYY'));
+            if (invVal.invdate !== null) {
+                $('.skelDivCustReminder .custListSdate').html(moment(invVal.invdate).format('DD MMM YYYY'));
+            }
+            $('.skelDivCustReminder .custName').html(invVal.first_name + " " + invVal.last_name);
+            $('.skelDivCustReminder .custMoNo').html(invVal.mobile_no);
+
+
+            $('.clsDivReminderList').append($('.skelDivCustReminder').html());
+        }
     })
 }
 
