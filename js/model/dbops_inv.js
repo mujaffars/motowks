@@ -53,7 +53,7 @@ function deleteInvoice(objFld) {
                 if (resp.code == 0)
                 {
                     // Remove the Invoice detail block
-                    $('.divInvliceDetails .inv_'+resp.invid).fadeOut('fast');
+                    $('.divInvliceDetails .inv_' + resp.invid).fadeOut('fast');
                     toastr.success('Invoice deleted successfully');
                 } else {
                     toastr.error('Invoice delete fail');
@@ -87,8 +87,8 @@ function editInvoice(objFld) {
     });
 }
 
-function getInvDtlModal(invId){
-    
+function getInvDtlModal(invId) {
+
     var postData = {
         'id': invId
     };
@@ -105,6 +105,48 @@ function getInvDtlModal(invId){
 //            console.log(resp);moment(val.maxinvdate).format('DD MMM YYYY')
             showModal('detail', 'servicing', resp);
         }
-    });    
-    
+    });
+
+}
+
+function getDashboardDtl() {
+
+    $.ajax({
+        url: serverUrl + "dashboardDtl",
+        type: 'GET',
+        beforeSend: function (request) {
+            request.setRequestHeader("Token", localStorage.getItem('token'));
+        },
+        dataType: 'json',
+        async: true,
+        error: function () {
+        },
+        success: function (resp) {
+            showDashboardData(resp);
+        },
+        error: function (res) {
+
+        },
+        fail: function () {
+            alert('request failed');
+        }
+    });
+}
+
+
+function showDashboardData(respData) {
+    var cnt = 1;
+    $.each(respData, function (key, val) {
+        $('.clsTblDashboard .clsChartMonth' + cnt).html(key);
+        var arrMonthDtl = val.split('_');
+        $('.clsTblDashboard .clsBar' + cnt).css('width', arrMonthDtl[1] + '%');
+        if (arrMonthDtl[0] > 0) {
+            $('.clsTblDashboard .clsBar' + cnt).html('_');
+        } else {
+            $('.clsTblDashboard .clsBar' + cnt).html('');
+        }
+        $('.clsTblDashboard .clsMonAmt' + cnt).html(arrMonthDtl[0]);
+        console.log(arrMonthDtl);
+        cnt++;
+    });
 }

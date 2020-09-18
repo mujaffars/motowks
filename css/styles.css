@@ -11,7 +11,11 @@ body{
     width: 100%;
     font-family: monospace !important;
 }
-
+#canvas{
+    width: 100% !important;
+    height: 40% !important;
+    font-size: 0.5em !important;
+}
 .clsLoadingText{
     color: #03647b;
     font-size: 1em;
@@ -22,6 +26,33 @@ body{
 img{border:none; max-height: 100%; max-width: 100%;
     image-rendering: -webkit-optimize-contrast;}
 
+/*** Dashboard CSS **/
+.parentDashDiv{
+    margin: 0 2%;
+}
+.headMonRep{
+    width: 100%;
+    text-align: center;
+}
+.clsDivWelcome{
+    float: right;
+}
+.clsBarChart{
+    height: 2%;
+    color: #439943 !important;
+}
+.clsMonAmt{
+    padding: 0 10%;
+}
+.clsTblDashboard .clsTd1{
+    width: 20%;
+}
+.clsTblDashboard .clsTd2{
+    width: 60%;
+}
+.clsTblDashboard .clsTd3{
+    width: 20%;
+}
 
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */

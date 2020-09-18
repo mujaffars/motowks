@@ -1,15 +1,16 @@
-var serverUrl = 'http://localhost/mwserver/api/';
+//var serverUrl = 'http://localhost/mwserver/api/';
 //var serverUrl='http://localhost:90/mwserver/api/';
-//var serverUrl = 'http://mjapps.shivtraderssangli.com/app/trade-app/api/';
+var serverUrl = 'http://mjapps.shivtraderssangli.com/app/trade-app/api/';
 var myHeaders = {"Token": localStorage.getItem('token')};
 
-console.log(myHeaders);
 function dbCreateCustomer(PostData) {
 
     $.ajax({
         url: serverUrl + 'createCustomer',
         type: 'post',
-        headers: myHeaders,
+        beforeSend: function (request) {
+            request.setRequestHeader("Token", localStorage.getItem('token'));
+        },
         dataType: 'json',
         contentType: 'application/json',
         data: JSON.stringify(PostData),
@@ -40,7 +41,9 @@ function getAllCustomer() {
     $.ajax({
         url: serverUrl + "listCustomer",
         type: 'GET',
-        headers: myHeaders,
+        beforeSend: function (request) {
+            request.setRequestHeader("Token", localStorage.getItem('token'));
+        },
         dataType: 'json',
         async: true,
         error: function () {
@@ -62,11 +65,13 @@ function getAllCustomer() {
     });
 }
 
-function dbUpdateCustomer(PostData){
+function dbUpdateCustomer(PostData) {
     $.ajax({
         url: serverUrl + 'updateCustomer',
         type: 'post',
-        headers: myHeaders,
+        beforeSend: function (request) {
+            request.setRequestHeader("Token", localStorage.getItem('token'));
+        },
         dataType: 'json',
         contentType: 'application/json',
         data: JSON.stringify(PostData),
@@ -95,7 +100,9 @@ function searchCustomer(PostData) {
     $.ajax({
         url: serverUrl + "searchCustomer",
         type: 'POST',
-        headers: myHeaders,
+        beforeSend: function (request) {
+            request.setRequestHeader("Token", localStorage.getItem('token'));
+        },
         dataType: 'json',
         data: JSON.stringify(PostData),
         async: true,
@@ -164,7 +171,9 @@ function setVehicleNoAutocomplete() {
             $.ajax({
                 url: serverUrl + "getCustomerAutocomp",
                 type: 'GET',
-                headers: myHeaders,
+                beforeSend: function (request) {
+                    request.setRequestHeader("Token", localStorage.getItem('token'));
+                },
                 dataType: 'json',
                 data: request,
                 success: function (data) {
@@ -190,7 +199,9 @@ function dbCreateInvoice(postData) {
     $.ajax({
         url: serverUrl + 'createInvoice',
         type: 'post',
-        headers: myHeaders,
+        beforeSend: function (request) {
+            request.setRequestHeader("Token", localStorage.getItem('token'));
+        },
         dataType: 'json',
         contentType: 'application/json',
         data: JSON.stringify(postData),
@@ -218,7 +229,9 @@ function getCustAndInvoices(postData) {
     $.ajax({
         url: serverUrl + 'searchCustomer',
         type: 'post',
-        headers: myHeaders,
+        beforeSend: function (request) {
+            request.setRequestHeader("Token", localStorage.getItem('token'));
+        },
         dataType: 'json',
         contentType: 'application/json',
         data: JSON.stringify(postData),
@@ -268,7 +281,7 @@ function showCustDetail(resp) {
     })
 
     $('.clsCustDetail .fa-pencil').click(function () {
-        
+
         var postData = {
             'id': $(this).attr('cust_id'),
             'getfor': 'custdtl'

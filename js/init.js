@@ -3,7 +3,7 @@ var theNextFun = false;
 
 $(window).on('load', function () {
 
-    if (localStorage.getItem("token") === null || localStorage.getItem("token") === undefined) {
+    if (localStorage.getItem("token") === "" || localStorage.getItem("token") === null || localStorage.getItem("token") === undefined) {
         showModal('login');
     }
 
@@ -41,6 +41,8 @@ $(function () {
             $('#sidebar-left').hide("slide", {direction: "left"}, 100);
         }
     })
+    
+    showThePage('index', 'pages/dashboard');
 })
 
 function hideScreen() {
@@ -49,6 +51,12 @@ function hideScreen() {
 
 function handleLeftMenuClicks() {
 
+    $('#sidebar-left .clsLnkDashboard').click(function () {
+        showHideSidebar();
+        $('.divPageHeader').html('Dashboard');
+        showThePage('index', 'pages/dashboard');
+    })
+    
     $('#sidebar-left .clsCustomer .clsCustomerAdd').click(function () {
         showHideSidebar();
         $('.divPageHeader').html('Add customer');

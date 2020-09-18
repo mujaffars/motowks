@@ -49,7 +49,7 @@ function definePageEvents(thePage, theFolder) {
 
     if (thePage === 'add' && theFolder === 'pages/customer') {
         $('.divPageHeader').html('Add customer');
-        
+
         $("#main").find('#vehicleNo').focus();
         $('#main #btnCCustBacklist').click(function () {
             showThePage('list', 'pages/customer');
@@ -82,7 +82,7 @@ function definePageEvents(thePage, theFolder) {
         })
     } else if (thePage === 'list' && theFolder === 'pages/customer') {
         $('.divPageHeader').html('List customer');
-        
+
         showModal('loader');
         theNextFun = 'iterateCustList';
         getAllCustomer();
@@ -157,7 +157,7 @@ function definePageEvents(thePage, theFolder) {
         setVehicleNoAutocomplete();
     } else if (thePage === 'detail' && theFolder === 'pages/customer') {
         $('.divPageHeader').html('Customer detail');
-        
+
         var fdata = {
             'id': custDtlId,
             'getfor': 'custinv'
@@ -166,14 +166,17 @@ function definePageEvents(thePage, theFolder) {
         getCustAndInvoices(fdata);
     } else if (thePage === 'edit' && theFolder === 'pages/customer') {
         $('.divPageHeader').html('Edit customer');
-        
-        theNextFun = 'showEditCustData';       
+
+        theNextFun = 'showEditCustData';
 
     } else if (thePage === 'reminder' && theFolder === 'pages/customer') {
         $('.divPageHeader').html('Re-service reminder');
-        
+
         theNextFun = 'showReminderData';
         getAllReminders();
+    } else if (thePage === 'index' && theFolder === 'pages/dashboard') {
+        $('.divPageHeader').html('Dashboard');
+        getDashboardDtl();
     }
 
 }

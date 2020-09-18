@@ -11,10 +11,37 @@
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 
         <link rel="stylesheet" href="css/libs1/toastr.min.css">
-
         <meta name="viewport" content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; connect-src http://mjapps.shivtraderssangli.com/"> -->
+
+        <script type="text/javascript" src="js/libs/jquery.min.js"></script>
+        <script type="text/javascript" src="js/libs/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/libs/moment.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            $(document).bind("mobileinit", function () {
+                $.extend($.mobile, {autoInitializePage: false})
+            });</script>
+        <script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+        <script type="text/javascript" src="js/monetize.js?v=4"></script>
+        <script type="text/javascript" src="js/globals.js?v=5"></script>
+        <script type="text/javascript" src="js/init.js?v=5"></script>
+        <script type="text/javascript" src="js/showhide.js?v=5"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/md5.js"></script>
+
+        <script type="text/javascript" src="js/libs/Chart.min.js"></script>
+        <script type="text/javascript" src="js/libs/utils.js"></script>
+
+        <!--<script type="text/javascript" src="js/audio.js?v=4"></script>-->
+        <script type="text/javascript" src="js/jquery.base64.js"></script>
+        <script type="text/javascript" src="js/libs1/toastr.min.js"></script>
+        <script type="text/javascript" src="js/libs1/funcamera.js"></script>
+        <script type="text/javascript" src="js/libs1/bootbox.all.min.js"></script>
+        <script type="text/javascript" src="js/model/dbops.js"></script>
+        <script type="text/javascript" src="js/model/dbops_inv.js"></script>
+
     </head>
+    
     <body onload="onLoad()" class="noselect ">
 
         <div id="header">
@@ -29,6 +56,7 @@
 
             <div id="div-sidebar-left">
                 <ul>
+                    <li class="clsLnkDashboard">Dashboard</li>
                     <li>Customer</li>
                     <ul class="clsCustomer">
                         <li class="clsCustomerAdd">Add</li>
@@ -38,53 +66,28 @@
                         <li class="clsLogout">Logout</li>
                     </ul>
 
-<!--                    <li>Servicing</li>
-                    <ul class="clsServicing">
-                        <li class="clsServicingAdd">Add</li>
-                        <li class="clsServicingList">List</li>
-                        <li class="clsServicingSearch">Search</li>
-                    </ul>-->
+                    <!--                    <li>Servicing</li>
+                                        <ul class="clsServicing">
+                                            <li class="clsServicingAdd">Add</li>
+                                            <li class="clsServicingList">List</li>
+                                            <li class="clsServicingSearch">Search</li>
+                                        </ul>-->
 
-                    <li>Service Items</li>
+<!--                    <li>Service Items</li>
                     <ul class="clsItems">
                         <li class="clsServer1">Server 1</li>
                         <li class="clsServer2">Server 2</li>
                         <li class="clsServer3">Server 3</li>                        
-                    </ul>
+                    </ul>-->
 
                 </ul>
             </div>
 
         </div>
 
-        <!--<img id="myImage" src="" alt="Girl in a jacket" width="500" height="600"/>-->
-
         <div id="main"></div>
-        <!--<div id="sidebar-right">Right</div>-->
-        <!-- <div id="footer">Footer</div> -->        
+
+
     </body>
 
-    <script type="text/javascript" src="js/libs/jquery.min.js"></script>
-    <script type="text/javascript" src="js/libs/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="js/libs/moment.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-                    $(document).bind("mobileinit", function () {
-                        $.extend($.mobile, {autoInitializePage: false})
-                    });</script>
-    <script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
-    <script type="text/javascript" src="js/monetize.js?v=4"></script>
-    <script type="text/javascript" src="js/globals.js?v=5"></script>
-    <script type="text/javascript" src="js/init.js?v=5"></script>
-    <script type="text/javascript" src="js/showhide.js?v=5"></script>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/md5.js"></script>
-    <!--<script type="text/javascript" src="js/audio.js?v=4"></script>-->
-    <script type="text/javascript" src="js/jquery.base64.js"></script>
-    <script type="text/javascript" src="js/libs1/toastr.min.js"></script>
-    <script type="text/javascript" src="js/libs1/funcamera.js"></script>
-    <script type="text/javascript" src="js/libs1/bootbox.all.min.js"></script>
-    <script type="text/javascript" src="js/model/dbops.js"></script>
-    <script type="text/javascript" src="js/model/dbops_inv.js"></script>
-</body>
 </html>
