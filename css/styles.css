@@ -364,6 +364,9 @@ img{border:none; max-height: 100%; max-width: 100%;
     font-size: 1.5em;
     color: #7b5b00;
 }
+.tblCustDetail .fa-trash{
+    float: right;
+}
 /**** Cust Edit Model ****/
 .tblEditCust td{
     font-size: 0.8em !important;

@@ -126,6 +126,9 @@ function definePageEvents(thePage, theFolder) {
             if ($("#main").find('#vehicleNo').val() === '') {
                 toastr.error('Vehicle No required');
                 $("#main").find('#vehicleNo').focus();
+            } else if ($("#main").find('#vehicleKmrun').val() === '') {
+                toastr.error('Vehicle running Km required');
+                $("#main").find('#vehicleKmrun').focus();
             } else if ($("#main").find('#invTotalAmt').val() === '') {
                 toastr.error('Invoice amount required');
                 $("#main").find('#invTotalAmt').focus();
